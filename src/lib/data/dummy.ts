@@ -1,6 +1,6 @@
 import { TProduct, TUser } from "@/types/globals";
 
-const SELLER: TUser = {
+export const SELLER: TUser = {
   user_id: 1,
   user_name: "Rizz Culinary",
   email: "rizzculinary@gmail.com",
@@ -11,7 +11,7 @@ const SELLER: TUser = {
   role: "SELLER",
 };
 
-const PRODUCTS: TProduct[] = [
+export const PRODUCTS: TProduct[] = [
   {
     id: 1,
     title: "Carbonara Cheese with Raw Vegetables",
