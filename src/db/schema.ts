@@ -1,3 +1,4 @@
+import { relations } from "drizzle-orm";
 import {
   date,
   integer,
@@ -36,3 +37,11 @@ export const product = pgTable("product", {
     onDelete: "cascade",
   }),
 });
+
+export const sellerRelations = relations(user, ({ many }) => ({
+  products: many(product),
+}));
+
+export const productRelations = relations(product, ({ one }) => ({
+  seller: one(user),
+}));
