@@ -22,7 +22,7 @@
 }
 
 @layer base {
-  * {
+  body {
     @apply bg-background;
   }
 }
