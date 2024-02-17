@@ -2,7 +2,7 @@ import ProductDetail from "@/components/product-detail";
 import { PRODUCTS } from "@/lib/data/dummy";
 
 function getProductDetail(slug: string) {
-  const productID = parseInt(slug.split("-").pop()!);
+  const productID = slug.split("-").pop();
   const product = PRODUCTS.find((product) => product.id === productID);
 
   return product ?? null;

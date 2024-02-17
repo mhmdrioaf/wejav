@@ -1,6 +1,5 @@
 "use client";
 
-import { TProduct } from "@/types/globals";
 import ProductImages from "./product-images";
 import ProductDescription from "./product-description";
 import { ReviewCard, SellerCard } from "../card";
@@ -17,7 +16,7 @@ export default function ProductDetail({ product }: IProductDetailProps) {
         <div className="w-1/4 flex flex-col gap-4">
           <ProductImages images={product.images} />
           <SellerCard
-            name={product.seller.user_name}
+            name={product.seller.name}
             profile_picture={product.seller.profile_picture ?? ""}
           />
         </div>
