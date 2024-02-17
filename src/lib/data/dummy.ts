@@ -1,19 +1,17 @@
-import { TProduct, TUser } from "@/types/globals";
-
 export const SELLER: TUser = {
-  user_id: 1,
-  user_name: "Rizz Culinary",
+  id: "ascbuiea93h23jknba98sd",
+  name: "Rizz Culinary",
   email: "rizzculinary@gmail.com",
-  created_at: new Date().toISOString(),
-  updated_at: new Date().toISOString(),
+  created_at: new Date(),
+  updated_at: new Date(),
   password: "dummypassword",
   profile_picture: "/dummy_profile_pic.jpg",
-  role: "SELLER",
+  role: USER_ROLE.SELLER,
 };
 
 export const PRODUCTS: TProduct[] = [
   {
-    id: 1,
+    id: "ksajkfljasncoiuawnf",
     title: "Carbonara Cheese with Raw Vegetables",
     price: 25000,
     images: ["/dummy_product_pic_1.jpg", "/dummy_product_pic_2.jpg"],
@@ -23,11 +21,11 @@ export const PRODUCTS: TProduct[] = [
         Namun, apa yang membuat hidangan ini unik adalah toppingnya yang segar dan beragam. Berbagai jenis sayuran segar seperti selada hijau, tomat cherry, potongan mentimun, irisan paprika, dan wortel disusun dengan indah di atas pasta. Topping ini tidak hanya memberikan kelezatan tambahan tetapi juga meningkatkan nilai nutrisi dan memberikan rasa segar yang menyegarkan.
         
         Gabungan antara cita rasa gurih dari saus carbonara dan kecrispan serta kelembutan sayuran mentah menciptakan pengalaman makan yang unik dan memuaskan. "Carbonara Cheese with Raw Vegetables Topping" adalah pilihan yang sempurna bagi mereka yang menginginkan hidangan yang menggabungkan kelezatan dan kesehatan dalam satu sajian yang menggoda selera.`,
-    seller_id: 1,
+    seller_id: "ascbuiea93h23jknba98sd",
     seller: SELLER,
   },
   {
-    id: 2,
+    id: "ksajkfljasncoiuawnffds",
     title: "Spagehetti Carbonara with Raw Vegetables Topping",
     price: 20000,
     images: ["/dummy_product_pic_2.jpg", "/dummy_product_pic_1.jpg"],
@@ -37,7 +35,7 @@ export const PRODUCTS: TProduct[] = [
         Namun, apa yang membuat hidangan ini unik adalah toppingnya yang segar dan beragam. Berbagai jenis sayuran segar seperti selada hijau, tomat cherry, potongan mentimun, irisan paprika, dan wortel disusun dengan indah di atas pasta. Topping ini tidak hanya memberikan kelezatan tambahan tetapi juga meningkatkan nilai nutrisi dan memberikan rasa segar yang menyegarkan.
         
         Gabungan antara cita rasa gurih dari saus carbonara dan kecrispan serta kelembutan sayuran mentah menciptakan pengalaman makan yang unik dan memuaskan. "Carbonara Cheese with Raw Vegetables Topping" adalah pilihan yang sempurna bagi mereka yang menginginkan hidangan yang menggabungkan kelezatan dan kesehatan dalam satu sajian yang menggoda selera.`,
-    seller_id: 1,
+    seller_id: "ascbuiea93h23jknba98sd",
     seller: SELLER,
   },
 ];

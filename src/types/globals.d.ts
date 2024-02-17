@@ -1,6 +1,27 @@
-import { user, product } from "@/db/schema";
-
-type TUser = typeof user.$inferSelect;
-type TProduct = typeof product.$inferSelect & {
-  seller: Pick<TUser, "email" | "user_name" | "profile_picture">;
+type TUser = {
+  id: string;
+  name: string;
+  email: string;
+  password: string;
+  profile_picture: string | null;
+  created_at: Date;
+  updated_at: Date;
+  role: USER_ROLE;
 };
+
+type TProduct = {
+  id: string;
+  title: string;
+  description: string;
+  price: number;
+  images: string[];
+  seller_id: string;
+
+  seller: TUser;
+};
+
+enum USER_ROLE {
+  ADMIN = "ADMIN",
+  SELLER = "SELLER",
+  CUSTOMER = "CUSTOMER",
+}
