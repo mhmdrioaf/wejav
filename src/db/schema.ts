@@ -18,7 +18,7 @@ export const USER_ROLE = pgEnum("USER_ROLE", [
 ]);
 
 export const user = pgTable("user", {
-  user_id: serial("user_id").primaryKey(),
+  id: text("user_id").primaryKey(),
   user_name: varchar("user_name").notNull(),
   email: varchar("email").notNull(),
   password: varchar("password").notNull(),
@@ -34,18 +34,18 @@ export const product = pgTable("product", {
   description: varchar("description").notNull(),
   price: integer("price").notNull().default(0),
   images: text("images").notNull().array(),
-  seller_id: serial("seller_id")
+  seller_id: text("seller_id")
     .notNull()
-    .references(() => user.user_id, {
+    .references(() => user.id, {
       onDelete: "cascade",
     }),
 });
 
 export const session = pgTable("session", {
   id: text("id").primaryKey(),
-  user_id: serial("user_id")
+  userId: text("user_id")
     .notNull()
-    .references(() => user.user_id),
+    .references(() => user.id),
   expiresAt: timestamp("expires_at", {
     withTimezone: true,
     mode: "date",
