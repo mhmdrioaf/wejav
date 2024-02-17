@@ -16,14 +16,11 @@ type TProduct = {
   price: number;
   images: string[];
   seller_id: string;
+  seller: TSeller;
 };
 
 type TSeller = TUser & {
   products: TProduct[];
 };
 
-enum USER_ROLE {
-  ADMIN = "ADMIN",
-  SELLER = "SELLER",
-  CUSTOMER = "CUSTOMER",
-}
+type USER_ROLE = "ADMIN" | "SELLER" | "CUSTOMER";

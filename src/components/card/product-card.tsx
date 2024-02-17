@@ -1,7 +1,6 @@
 "use client";
 
 import { formatToIDR, getProductURL } from "@/lib/utils";
-import { TProduct } from "@/types/globals";
 import { MapPinIcon, StarIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -41,7 +40,7 @@ export default function ProductCard({ product }: IProductCardProps) {
               />
             </div>
           )}
-          <p className="text-xs">{product.seller.user_name}</p>
+          <p className="text-xs">{product.seller.name}</p>
         </div>
 
         <div className="w-full inline-flex items-center justify-between">

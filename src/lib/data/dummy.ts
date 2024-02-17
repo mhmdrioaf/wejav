@@ -1,4 +1,4 @@
-export const SELLER: TUser = {
+export const SELLER: TSeller = {
   id: "ascbuiea93h23jknba98sd",
   name: "Rizz Culinary",
   email: "rizzculinary@gmail.com",
@@ -6,7 +6,8 @@ export const SELLER: TUser = {
   updated_at: new Date(),
   password: "dummypassword",
   profile_picture: "/dummy_profile_pic.jpg",
-  role: USER_ROLE.SELLER,
+  role: "SELLER",
+  products: [],
 };
 
 export const PRODUCTS: TProduct[] = [

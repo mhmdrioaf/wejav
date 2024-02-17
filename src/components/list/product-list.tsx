@@ -1,6 +1,5 @@
 "use client";
 
-import { TProduct } from "@/types/globals";
 import { ProductCard } from "../card";
 
 interface IProductListProps {
