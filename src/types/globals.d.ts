@@ -16,8 +16,10 @@ type TProduct = {
   price: number;
   images: string[];
   seller_id: string;
+};
 
-  seller: TUser;
+type TSeller = TUser & {
+  products: TProduct[];
 };
 
 enum USER_ROLE {
