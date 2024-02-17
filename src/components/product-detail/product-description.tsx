@@ -1,7 +1,6 @@
 "use client";
 
 import { formatToIDR } from "@/lib/utils";
-import { TProduct } from "@/types/globals";
 import { Button } from "../button";
 
 interface IProductDescriptionProps {
