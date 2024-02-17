@@ -1,13 +1,13 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
+import carousel1 from "../../../public/dummy_carousel_pic.jpg";
+import carousel2 from "../../../public/dummy_product_pic_1.jpg";
+import carousel3 from "../../../public/dummy_product_pic_2.jpg";
+import { StaticImageData } from "next/image";
 
 export default function useCarousel() {
-  const IMAGES: string[] = [
-    "/dummy_carousel_pic.jpg",
-    "/dummy_product_pic_1.jpg",
-    "/dummy_product_pic_2.jpg",
-  ];
+  const IMAGES: StaticImageData[] = [carousel1, carousel2, carousel3];
   const [activeIndex, setActiveIndex] = useState<number>(0);
 
   const nextImage = useCallback(() => {

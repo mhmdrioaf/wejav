@@ -14,7 +14,7 @@ export default function Carousel() {
         fill
         className="object-cover z-0 transition-all"
         alt="Carousel Pic"
-        loading="lazy"
+        placeholder="blur"
         sizes="55vw"
       />
 
