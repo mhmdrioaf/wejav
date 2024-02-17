@@ -66,7 +66,7 @@ export default function RegisterForm() {
             fullWidth
             variant="outline"
             type="button"
-            onClick={() => router.push("/")}
+            onClick={() => router.push("/login")}
           >
             Login
           </Button>
