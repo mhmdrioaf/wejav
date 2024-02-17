@@ -13,6 +13,7 @@ export default function Slogan() {
         className="object-cover z-0 brightness-125 contrast-125"
         alt="WeJav"
         placeholder="blur"
+        sizes="85vw"
       />
 
       <div className="w-full bg-black/40 px-4 py-2 backdrop-blur-sm flex flex-col gap-4 z-10 text-white rounded-t-lg items-center justify-center">

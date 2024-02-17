@@ -1,5 +1,6 @@
 "use client";
 
+import { generateShimmer } from "@/lib/utils";
 import Image from "next/image";
 
 interface ISellerCardProps {
@@ -17,6 +18,7 @@ export default function SellerCard({ ...props }: ISellerCardProps) {
           fill
           className="object-cover"
           sizes="55vw"
+          placeholder={`data:image/${generateShimmer(48, 48)}`}
         />
       </div>
 

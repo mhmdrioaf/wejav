@@ -1,6 +1,12 @@
 "use client";
 
-import { formatToIDR, getProductURL } from "@/lib/utils";
+import {
+  formatToIDR,
+  generateShimmer,
+  getProductURL,
+  shimmerEffect,
+  toBase64,
+} from "@/lib/utils";
 import { MapPinIcon, StarIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -20,7 +26,10 @@ export default function ProductCard({ product }: IProductCardProps) {
           src={product.images[0]}
           alt={product.title}
           className="object-cover"
+          placeholder={`data:image/${generateShimmer(100, 100)}`}
+          loading="lazy"
           fill
+          sizes="55vw"
         />
       </div>
 
@@ -37,6 +46,9 @@ export default function ProductCard({ product }: IProductCardProps) {
                 fill
                 className="object-cover"
                 alt="Seller avatar"
+                placeholder={`data:image/${generateShimmer(16, 16)}`}
+                loading="lazy"
+                sizes="55vw"
               />
             </div>
           )}

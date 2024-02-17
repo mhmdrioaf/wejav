@@ -4,6 +4,7 @@ import Image from "next/image";
 import useCarousel from "./useCarousel";
 import { Button } from "../button";
 import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
+import { generateShimmer } from "@/lib/utils";
 
 export default function Carousel() {
   const { image, prev, next, length, onDotClick, activeIndex } = useCarousel();
@@ -14,7 +15,7 @@ export default function Carousel() {
         fill
         className="object-cover z-0 transition-all"
         alt="Carousel Pic"
-        placeholder="blur"
+        placeholder={`data:image/${generateShimmer(100, 100)}`}
         sizes="55vw"
       />
 

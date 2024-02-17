@@ -1,5 +1,6 @@
 "use client";
 
+import { generateShimmer } from "@/lib/utils";
 import Image from "next/image";
 
 interface IProductImagesProps {
@@ -15,6 +16,8 @@ export default function ProductImages({ images }: IProductImagesProps) {
           fill
           className="object-cover"
           alt="Product images"
+          placeholder={`data:image/${generateShimmer(100, 100)}`}
+          sizes="75vw"
         />
       </div>
 
@@ -29,6 +32,8 @@ export default function ProductImages({ images }: IProductImagesProps) {
               fill
               className="object-cover"
               alt="Product images"
+              placeholder={`data:image/${generateShimmer(100, 100)}`}
+              sizes="75vw"
             />
           </div>
         ))}
