@@ -1,9 +1,10 @@
 "use client";
 
-import { formatToIDR } from "@/lib/utils";
+import { formatToIDR, getProductURL } from "@/lib/utils";
 import { TProduct } from "@/types/globals";
 import { MapPinIcon, StarIcon } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 interface IProductCardProps {
   product: TProduct;
@@ -11,7 +12,10 @@ interface IProductCardProps {
 
 export default function ProductCard({ product }: IProductCardProps) {
   return (
-    <div className="w-full flex flex-col gap-3 border border-border rounded-lg text-black overflow-hidden">
+    <Link
+      href={getProductURL(product)}
+      className="w-full flex flex-col gap-3 border border-border rounded-lg text-black overflow-hidden"
+    >
       <div className="w-full h-32 rounded-es-lg rounded-ee-lg overflow-hidden relative">
         <Image
           src={product.images[0]}
@@ -56,6 +60,6 @@ export default function ProductCard({ product }: IProductCardProps) {
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
