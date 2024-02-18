@@ -1,9 +1,15 @@
 "use client";
 
-import { formatToIDR } from "@/lib/utils";
-import { TProduct } from "@/types/globals";
+import {
+  formatToIDR,
+  generateShimmer,
+  getProductURL,
+  shimmerEffect,
+  toBase64,
+} from "@/lib/utils";
 import { MapPinIcon, StarIcon } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 interface IProductCardProps {
   product: TProduct;
@@ -11,13 +17,19 @@ interface IProductCardProps {
 
 export default function ProductCard({ product }: IProductCardProps) {
   return (
-    <div className="w-full flex flex-col gap-3 border border-border rounded-lg text-black overflow-hidden">
+    <Link
+      href={getProductURL(product)}
+      className="w-full flex flex-col gap-3 border border-border rounded-lg text-black overflow-hidden"
+    >
       <div className="w-full h-32 rounded-es-lg rounded-ee-lg overflow-hidden relative">
         <Image
           src={product.images[0]}
           alt={product.title}
           className="object-cover"
+          placeholder={`data:image/${generateShimmer(100, 100)}`}
+          loading="lazy"
           fill
+          sizes="55vw"
         />
       </div>
 
@@ -34,10 +46,13 @@ export default function ProductCard({ product }: IProductCardProps) {
                 fill
                 className="object-cover"
                 alt="Seller avatar"
+                placeholder={`data:image/${generateShimmer(16, 16)}`}
+                loading="lazy"
+                sizes="55vw"
               />
             </div>
           )}
-          <p className="text-xs">{product.seller.user_name}</p>
+          <p className="text-xs">{product.seller.name}</p>
         </div>
 
         <div className="w-full inline-flex items-center justify-between">
@@ -56,6 +71,6 @@ export default function ProductCard({ product }: IProductCardProps) {
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
