@@ -5,6 +5,7 @@ import ProductDescription from "./product-description";
 import { ReviewCard, SellerCard } from "../card";
 import { REVIEWS } from "@/lib/data/dummy";
 import { ProductProvider } from "./useProduct";
+import { ModalProductImages } from "../modal";
 
 interface IProductDetailProps {
   product: TProduct;
@@ -33,6 +34,8 @@ export default function ProductDetail({ product }: IProductDetailProps) {
           ))}
         </div>
       </div>
+
+      <ModalProductImages images={product.images} />
     </ProductProvider>
   );
 }
