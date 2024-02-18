@@ -7,12 +7,15 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-background text-black hover:bg-background/75",
-        primary: "bg-accent text-black hover:bg-accent/75",
+        default:
+          "bg-background text-black hover:bg-background/75 disabled:bg-background/75",
+        primary:
+          "bg-accent text-black hover:bg-accent/75 disabled:bg-accent/75 disabled:text-black/75",
         ghost: "bg-transparent text-black",
-        destructive: "bg-destructive text-white hover:bg-destructive/75",
+        destructive:
+          "bg-destructive text-white hover:bg-destructive/75 disabled:bg-destructive/75 disabled:text-white/75",
         outline:
-          "bg-background border border-border text-black hover:bg-neutral-100",
+          "bg-background border border-border text-black hover:bg-neutral-100 disabled:bg-neutral-100 disabled:text-black/75",
       },
       size: {
         sm: "px-1 py-1 text-xs rounded-md",
