@@ -6,11 +6,16 @@ export type TProductContext = {
   state: {
     quantity: number;
     total_price: number;
+    active_image: string;
+    showImagesModal: boolean;
   };
 
   handler: {
     onQuantityChange: (action: "increase" | "decrease") => void;
     onQuantityInputChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+    onImageClick: (image: string) => void;
+    onShowImagesModal: (image: string) => void;
+    onHideImagesModal: () => void;
   };
 };
 
@@ -24,6 +29,10 @@ interface IProductProviderProps {
 export function ProductProvider({ product, children }: IProductProviderProps) {
   const [quantity, setQuantity] = React.useState<number>(1);
   const [totalPrice, setTotalPrice] = React.useState<number>(product.price);
+  const [showImagesModal, setShowImagesModal] = React.useState<boolean>(false);
+  const [activeImage, setActiveImage] = React.useState<string>(
+    product.images[0]
+  );
 
   const onQuantityChange = (action: "increase" | "decrease") => {
     if (action === "increase") {
@@ -56,14 +65,32 @@ export function ProductProvider({ product, children }: IProductProviderProps) {
     }
   };
 
+  const onImageClick = (image: string) => {
+    setActiveImage(image);
+  };
+
+  const onShowImagesModal = (image: string) => {
+    setActiveImage(image);
+    setShowImagesModal(true);
+  };
+
+  const onHideImagesModal = () => {
+    setShowImagesModal(false);
+  };
+
   const value: TProductContext = {
     state: {
       quantity,
       total_price: totalPrice,
+      active_image: activeImage,
+      showImagesModal,
     },
     handler: {
       onQuantityChange,
       onQuantityInputChange,
+      onImageClick,
+      onShowImagesModal,
+      onHideImagesModal,
     },
   };
 
