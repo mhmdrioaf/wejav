@@ -37,7 +37,6 @@ export default function ProductDescription({
             type="number"
             min={1}
             value={state.quantity}
-            defaultValue={1}
             className="w-[8ch] bg-background border text-center text-sm border-black px-4 py-2 rounded-lg"
             onChange={handler.onQuantityInputChange}
           />
